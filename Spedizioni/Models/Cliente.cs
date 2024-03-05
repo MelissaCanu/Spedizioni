@@ -11,16 +11,18 @@ namespace Spedizioni.Models
 
         public int IDCliente { get; set; }
 
-        [Display(Name = "Inserisci il nome o il nominativo dell'azienda")]
+        [Display(Name = "Nome e cognome cliente o nominativo azienda")]
         [Required(ErrorMessage = "Il campo Nome/Nominativo è obbligatorio")]
         public string NomeNominativo { get; set; }
 
         public bool IsAzienda { get; set; }
 
-        [Display(Name = "Inserisci il tuo codice fiscale" )]
+        [Display(Name = "Codice fiscale cliente" )]
+        [RegularExpression(@"\d{16}", ErrorMessage = "Codice fiscale non valido")]
         public string CodFisc { get; set; }
 
-        [Display(Name = "Inserisci la tua P.Iva")]
+        [Display(Name = "P.Iva (Azienda)")]
+        [RegularExpression(@"\d{11}", ErrorMessage = "Partita IVA non valida")]
         public string PIva {  get; set; }
     }
 }

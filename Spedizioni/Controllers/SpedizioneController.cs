@@ -20,7 +20,12 @@ namespace Spedizioni.Controllers
         //POST: Spedizione - ricevo i dati inviati dal form, valido e salvo in db
         //se success reindirizzo a pagina di conferma
         [HttpPost]
-        public ActionResult NuovaSpedizione(Spedizione spedizione)
+        //ValidateAntiForgeryToken per evitare attacchi CSRF (Cross-Site Request Forgery)
+        [ValidateAntiForgeryToken] //poi aggiungo @Html.AntiForgeryToken() nella view
+
+
+        //Bind: specifico quali campi del modello posso ricevere dal form (per evitare attacchi di overposting)
+        public ActionResult NuovaSpedizione([Bind(Include = "IDCliente,DataSpedizione,Peso,NominativoDestinatario,CostoSpedizione,CittaDestinazione,IndirizzoDestinatario,DataConsegnaPrevista")] Spedizione spedizione)
         {
             if (ModelState.IsValid)
             {

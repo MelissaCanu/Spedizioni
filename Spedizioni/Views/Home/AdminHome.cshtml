@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page Admin";
+}
+
+<h2>Benvenuto, Admin!</h2>
+
+<p>Questa è la tua pagina di amministrazione.</p>
+
+<!--se l'utente è un admin, può vedere i link per creare una nuova spedizione e un nuovo cliente-->
+@if (User.IsInRole("admin"))
+{
+    <div>
+        @Html.ActionLink("Crea Nuova Spedizione", "NuovaSpedizione", "Spedizione", null, new { @class = "btn btn-primary" })
+    </div>
+    <div>
+        @Html.ActionLink("Aggiungi Nuovo Cliente", "NuovoCliente", "Cliente", null, new { @class = "btn btn-primary" })
+    </div>
+}

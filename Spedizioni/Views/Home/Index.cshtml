@@ -3,12 +3,10 @@
 }
 
 <main>
+    <div class="custom-cursor"></div>
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">PAW-EX</h1>
         <p class="lead">Con PAW-EX spedisci in tutta Italia a prezzi imbattibili!</p>
-        <div>
-            @Html.ActionLink("Registrati", "NuovoCliente", "Cliente", null, new { @class = "btn btn-primary" })
-        </div>
     </section>
 
     <div class="row my-3">
@@ -46,7 +44,7 @@
     const catImage = document.getElementById('catImage');
 
     document.addEventListener("mousemove", (e) => {
-        // Update the custom cursor position to follow the mouse
+        
         customCursor.style.left = e.clientX + "px";
         customCursor.style.top = e.clientY + "px";
     });

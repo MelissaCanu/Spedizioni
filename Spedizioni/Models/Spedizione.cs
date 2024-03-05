@@ -19,7 +19,7 @@ namespace Spedizioni.Models
         [Required(ErrorMessage = "La data di spedizione è obbligatoria")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Remote("IsValidData", "Spedizione", HttpMethod = "POST", ErrorMessage = "La data di spedizione non può essere inferiore a oggi")]
+        [Remote("IsValidData", "Spedizioni", HttpMethod = "POST", ErrorMessage = "La data di spedizione non può essere inferiore a oggi")]
         public DateTime DataSpedizione { get; set; }
 
         [Display(Name = "Peso(kg)")]
@@ -52,7 +52,7 @@ namespace Spedizioni.Models
         [DisplayName("Data di consegna prevista")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Remote("IsValidData2", "Spedizione", HttpMethod = "POST", ErrorMessage = "La data di consegna non può essere inferiore a oggi")]
+        [Remote("IsValidData2", "Spedizioni", HttpMethod = "POST", ErrorMessage = "La data di consegna non può essere inferiore a oggi")]
         public DateTime DataConsegnaPrevista { get; set; }
     }
 
