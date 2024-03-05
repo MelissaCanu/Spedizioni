@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">PAW-EX</h1>
+        <p class="lead">Con PAW-EX spedisci in tutta Italia a prezzi imbattibili!</p>
+        <div>
+            @Html.ActionLink("Registrati", "NuovoCliente", "Cliente", null, new { @class = "btn btn-primary" })
+        </div>
+    </section>
+
+    <div class="row my-3">
+        <section class="col-md-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/Content/img/courier-cat.jpg" alt="Image">
+                <div class="card-body">
+                    <h2 class="card-title">Corrieri formati e sempre aggiornati</h2>
+                    <p class="card-text">Con PAW-EX non dovrai più preoccuparti di niente, dal momento dell'ordine al momento della consegna. Lascia che se ne occupino i nostri corrieri esperti!</p>
+                </div>
+            </div>
+        </section>
+        <section class="col-md-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/Content/img/swiss-cat.jpg" alt="Image">
+                <div class="card-body">
+                    <h2 class="card-title">La PAW-UNTUALITA' ci contraddistingue</h2>
+                    <p class="card-text">PAW-EX conta il 100% di DI-PAW-NDENTI di origini svizzere, mai più ritardi!</p>
+                </div>
+            </div>
+        </section>
+        <section class="col-md-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/Content/img/warehouse-cat.jpg" alt="Image">
+                <div class="card-body">
+                    <h2 class="card-title">Non ci sei al momento del ritiro, ma non hai avuto modo di avvisare?</h2>
+                    <p class="card-text">Nessun problema! Con PAW-EX non devi neanche alzarti dal divano, il tuo pacco verrà portato nel deposito più vicino sotto stretta osservazione dei nostri warehouse specialist! Ritenteremo la consegna ogni ora dei 10 giorni successivi!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<script>
+    const customCursor = document.querySelector(".custom-cursor");
+    const catImage = document.getElementById('catImage');
+
+    document.addEventListener("mousemove", (e) => {
+        // Update the custom cursor position to follow the mouse
+        customCursor.style.left = e.clientX + "px";
+        customCursor.style.top = e.clientY + "px";
+    });
+</script>
